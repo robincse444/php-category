@@ -1,36 +1,36 @@
 <?php
 require_once 'vendor/autoload.php';
 
-use \App\classes\Category;
-use \App\classes\Products;
+use \App\classes\Newspaper;
+use \App\classes\Newspapers;
 
 if (isset($_GET['pages']))
 {
-    if ($_GET['pages'] == 'all-products')
+    if ($_GET['pages'] == 'all-news')
     {
-        $category = new Category();
-        $categories = $category->category();
-        $product = new Products();
-        $products = $product->index();
-        include 'pages/allProducts.php';
+        $newspaper = new Newspaper();
+        $newspapers = $newspaper->newspaper();
+        $newspaper = new Newspapers();
+        $newspapers = $newspaper->index();
+        include 'pages/allNews.php';
     }
-    elseif ($_GET['pages'] == 'category-products')
+    elseif ($_GET['pages'] == 'newspaper-newspapers')
     {
-        $category = new Category();
-        $categories = $category->category();
-        $product = new Products();
-        $products = $product->shortProducts($_GET['category_id']);
-        include 'pages/allProducts.php';
+        $newspaper = new Newspaper();
+        $newspapers = $newspaper->newspaper();
+        $newspaper = new Newspapers();
+        $newspapers = $newspaper->shortNewspapers($_GET['news_id']);
+        include 'pages/allNews.php';
     }
-    elseif ($_GET['pages'] == 'product-Details')
+    elseif ($_GET['pages'] == 'news-details')
     {
-        $category = new Category();
-        $categories = $category->category();
-        $product = new Products();
-        $productDetails = $product->getProductDetails($_GET['product_id']);
+        $newspaper = new Newspaper();
+        $newspapers = $newspaper->newspaper();
+        $newspaper = new Newspapers();
+        $newsDetails = $newspaper->getNewsDetails($_GET['news_id']);
 //        print_r($productDetails);
 //        exit();
-        include 'pages/productDetails.php';
+        include 'pages/newsDetails.php';
     }
 
 }

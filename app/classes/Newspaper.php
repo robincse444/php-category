@@ -4,22 +4,23 @@
 namespace App\classes;
 
 
-class Category
+class Newspaper
 {
-    public function category ()
+
+    public function newspaper ()
     {
         return [
             0=>[
                 'id'   => 1,
-                'name' => 'Man Fashion',
+                'name' => 'Bangladesh',
             ],
             1=>[
                 'id'   => 2,
-                'name' => 'Woman Fashion'
+                'name' => 'World'
             ],
             2=>[
                 'id' => 3,
-                'name' => 'Kids Fashion'
+                'name' => 'Business'
             ],
         ];
     }
